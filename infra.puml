@@ -1,0 +1,29 @@
+@startuml c
+title Infraestructura Proyecto de Graduación 
+
+cloud "Firebase" {
+    [Autenticación]
+}
+
+node "Cliente (Navegador Web)" {
+    [Interfaz Web]
+}
+
+node "Servidor Node.js" {
+    [Servidor Principal]
+    [CNN para Diagnóstico]
+}
+
+database "Dispositivo 1" {
+    [Dispositivo]
+}
+
+[Interfaz Web] --> [Autenticación] : Inicia sesión
+ 
+[Servidor Principal] --> [CNN para Diagnóstico] : Procesa imagen
+[CNN para Diagnóstico] --> [Servidor Principal] : Devuelve diagnóstico
+[Servidor Principal] --> [Interfaz Web] : Muestra diagnóstico
+[Servidor Principal] --> [Dispositivo] : Guarda diagnóstico
+[Interfaz Web] --> [Dispositivo] : Descarga notas
+
+@enduml
