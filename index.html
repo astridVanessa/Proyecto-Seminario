@@ -393,25 +393,8 @@
 
 
 
-<script>
-   const mensajes = ["Presenta rasgos de egocentrismo y narcisismo, tomando en cuenta la omisión de varias partes de la figura humana."];
-let contador = 0; // Inicializamos un contador para los mensajes
 
-// Agrega el listener al botón para redirigir a otra página
-document.getElementById("navigateButton").addEventListener("click", function() {
-    // Simulamos un ciclo for con un solo paso
-    for (let i = 0; i < mensajes.length; i++) {
-        if (i === contador) {
-            // Redirigir a la nueva página con el mensaje en la URL
-            window.location.href = 'p.html?mensaje=' + encodeURIComponent(mensajes[i]);
-
-            // Incrementar el contador y reiniciarlo si supera la cantidad de mensajes
-            contador = (contador + 1) % mensajes.length;  // Reiniciar cuando supera el límite
-            break; // Salimos del ciclo for después de mostrar el mensaje correspondiente
-        }
-    }
-});
 
     
-</script>
+
 </html>
